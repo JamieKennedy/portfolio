@@ -1,0 +1,47 @@
+.fadedown-start {
+    opacity: 0;
+}
+
+.fadedown-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.fadedown-end {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.fadeleft-start {
+    opacity: 0;
+}
+
+.fadeleft-active {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.fadeleft-end {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.faderight-start {
+    opacity: 0;
+}
+
+.faderight-active {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.faderight-end {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 500ms, transform 500ms;
+}
