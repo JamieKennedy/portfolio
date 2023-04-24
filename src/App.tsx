@@ -14,15 +14,11 @@ function App() {
 
     return (
         <section className={theme === 'dark' ? 'dark' : ''}>
-            <div className="overflow-auto dark:bg-slate-900">
+            <div className="min-h-screen overflow-auto dark:bg-slate-900">
                 <Header />
                 <div className="m-auto flex max-w-7xl flex-col">
                     <About />
-                    <Experience />
-                    <Projects />
                 </div>
-
-                <div className={` m-auto min-h-screen `}></div>
             </div>
         </section>
     );
