@@ -15,14 +15,14 @@ const links: linkData[] = [
         title: 'About',
         to: 'About',
     },
-    {
-        title: 'Experience',
-        to: 'Experience',
-    },
-    {
-        title: 'Projects',
-        to: 'Projects',
-    },
+    // {
+    //     title: 'Experience',
+    //     to: 'Experience',
+    // },
+    // {
+    //     title: 'Projects',
+    //     to: 'Projects',
+    // },
 ];
 const HeaderLinks = () => {
     const [isMounted, setIsMounted] = useState(false);
