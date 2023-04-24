@@ -4,13 +4,17 @@ import { BsArrowRightShort } from 'react-icons/bs';
 import IconListItem from '../../../ui/IconListItem';
 
 const frontend: string[] = ['React', 'TypeScript', 'Tailwind', 'Flutter', 'WebForms'];
-const backend: string[] = ['C#', 'VB.Net', 'ASP.Net Core', 'ASP.Net Framework', 'Dapper', 'EntityFramework Core'];
+const backend: string[] = ['C#', 'VB.Net', 'ASP.Net Core', 'ASP.Net Core Web API', 'ASP.Net Framework', 'Dapper', 'EntityFramework Core'];
 const db: string[] = ['MS SQL Server'];
 const tools: string[] = ['Git', 'Azure DevOps'];
 const other: string[] = ['Python', 'Dart'];
 
 const TechStack: React.FunctionComponent = () => {
-    const listIcon = <BsArrowRightShort className="mr-2 text-xl text-indigo-400" />;
+    const listIcon = (
+        <div className="mr-2 h-9 w-6 self-start">
+            <BsArrowRightShort className="mr-2 h-9 w-6 text-xl text-indigo-400" />
+        </div>
+    );
 
     return (
         <>
@@ -38,7 +42,7 @@ const TechStack: React.FunctionComponent = () => {
                 </div>
                 <div className="mb-8 flex w-56 flex-col ">
                     <p className="text-xl ">Database</p>
-                    <ul className="leading-9">
+                    <ul className="">
                         {db.map((item, i) => (
                             <IconListItem key={i} icon={listIcon}>
                                 {item}

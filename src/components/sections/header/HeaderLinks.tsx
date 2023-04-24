@@ -15,10 +15,10 @@ const links: linkData[] = [
         title: 'About',
         to: 'About',
     },
-    // {
-    //     title: 'Experience',
-    //     to: 'Experience',
-    // },
+    {
+        title: 'Experience',
+        to: 'Experience',
+    },
     // {
     //     title: 'Projects',
     //     to: 'Projects',

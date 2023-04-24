@@ -16,8 +16,10 @@ function App() {
         <section className={theme === 'dark' ? 'dark' : ''}>
             <div className="min-h-screen overflow-auto dark:bg-slate-900">
                 <Header />
-                <div className="m-auto flex max-w-7xl flex-col">
+                <div className="m-auto mb-32 flex max-w-7xl flex-col">
                     <About />
+                    <Experience />
+                    {/* <Projects /> */}
                 </div>
             </div>
         </section>
