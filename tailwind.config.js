@@ -11,6 +11,9 @@ export default {
             transitionProperty: {
                 height: 'height',
             },
+            colors: {
+                linkedInBlue: '#0077B5',
+            },
         },
     },
     plugins: [require('tailwind-scrollbar')],

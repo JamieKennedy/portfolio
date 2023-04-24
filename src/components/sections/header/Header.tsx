@@ -46,7 +46,7 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed z-50  flex w-full flex-row items-center justify-between place-self-center px-20 transition-all duration-300 ease-in-out ${dynamicHeaderClasses}`}
+            className={`fixed z-50  flex w-full flex-row items-center justify-between place-self-center px-20 transition-height duration-300 ease-in-out ${dynamicHeaderClasses}`}
         >
             <HeaderTitle />
             <HeaderLinks />

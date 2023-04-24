@@ -13,10 +13,7 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
 }
 
-const Toggle: React.FunctionComponent<IToggleProps> = ({
-    toggleFn,
-    defaultState,
-}) => {
+const Toggle: React.FunctionComponent<IToggleProps> = ({ toggleFn, defaultState }) => {
     const [enabled, setEnabled] = React.useState(defaultState);
 
     const onToggle = (checked: boolean) => {
@@ -29,7 +26,7 @@ const Toggle: React.FunctionComponent<IToggleProps> = ({
             checked={enabled}
             onChange={(checked) => onToggle(checked)}
             className={classNames(
-                enabled ? 'bg-indigo-600' : 'bg-gray-200',
+                enabled ? 'bg-slate-600' : 'bg-gray-200',
                 'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none '
             )}
         >
@@ -42,9 +39,7 @@ const Toggle: React.FunctionComponent<IToggleProps> = ({
             >
                 <span
                     className={classNames(
-                        enabled
-                            ? 'opacity-0 duration-100 ease-out'
-                            : 'opacity-100 duration-200 ease-in',
+                        enabled ? 'opacity-0 duration-100 ease-out' : 'opacity-100 duration-200 ease-in',
                         'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
                     )}
                     aria-hidden="true"
@@ -53,14 +48,12 @@ const Toggle: React.FunctionComponent<IToggleProps> = ({
                 </span>
                 <span
                     className={classNames(
-                        enabled
-                            ? 'opacity-100 duration-200 ease-in'
-                            : 'opacity-0 duration-100 ease-out',
+                        enabled ? 'opacity-100 duration-200 ease-in' : 'opacity-0 duration-100 ease-out',
                         'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
                     )}
                     aria-hidden="true"
                 >
-                    <MoonIcon className="h-4 w-4 text-indigo-600" />
+                    <MoonIcon className="h-4 w-4 text-slate-600" />
                 </span>
             </span>
         </Switch>

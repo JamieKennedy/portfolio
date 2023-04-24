@@ -16,12 +16,12 @@ const links: linkData[] = [
         to: 'About',
     },
     {
-        title: 'Projects',
-        to: 'Projects',
+        title: 'Experience',
+        to: 'Experience',
     },
     {
-        title: 'Blog',
-        to: '',
+        title: 'Projects',
+        to: 'Projects',
     },
 ];
 const HeaderLinks = () => {
@@ -43,7 +43,7 @@ const HeaderLinks = () => {
         linkElements = links.map<any>((link, i) => {
             return (
                 <TransitionElement key={i} classBase={'fadedown'} duration={500} delay={i * 200}>
-                    <ScrollLink to={link.to} offset={-80}>
+                    <ScrollLink to={link.to} offset={-96}>
                         {link.title}
                     </ScrollLink>
                 </TransitionElement>

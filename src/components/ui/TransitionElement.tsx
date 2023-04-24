@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export interface ITransitionElementProps {
     className?: string;
@@ -9,6 +9,7 @@ export interface ITransitionElementProps {
 }
 
 enum TransitionState {
+    Inactive,
     Start,
     Active,
     End,
@@ -16,6 +17,8 @@ enum TransitionState {
 
 const TransitionElement: React.FunctionComponent<ITransitionElementProps> = ({ className, classBase, delay, duration, children }) => {
     const [transitionState, setTransitionState] = useState<TransitionState>(TransitionState.Start);
+    const [isVisible, setIsVisible] = useState(false);
+    const domRef = useRef<HTMLDivElement | null>(null);
 
     const getClassName = (): string => {
         if (transitionState === TransitionState.Start) return `${classBase}-start`;
@@ -28,23 +31,40 @@ const TransitionElement: React.FunctionComponent<ITransitionElementProps> = ({ c
     };
 
     useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setIsVisible(true);
+
+                observer.unobserve(domRef.current!);
+            }
+        });
+
+        if (domRef.current) observer.observe(domRef.current);
+
         let timer: number;
 
-        if (transitionState === TransitionState.Start) {
-            // Initial delay
-            timer = setTimeout(() => setTransitionState(TransitionState.Active), delay ?? 0);
-        }
+        if (isVisible) {
+            if (transitionState === TransitionState.Start) {
+                // Initial delay
+                timer = setTimeout(() => setTransitionState(TransitionState.Active), delay ?? 0);
+            }
 
-        if (transitionState === TransitionState.Active) {
-            timer = setTimeout(() => setTransitionState(TransitionState.End), duration);
+            if (transitionState === TransitionState.Active) {
+                timer = setTimeout(() => setTransitionState(TransitionState.End), duration);
+            }
         }
 
         return () => {
             clearTimeout(timer);
+            observer.disconnect;
         };
-    }, [transitionState]);
+    }, [transitionState, isVisible]);
 
-    return <div className={className + ' ' + getClassName()}>{children}</div>;
+    return (
+        <div className={className + ' ' + getClassName()} ref={domRef}>
+            {children}
+        </div>
+    );
 };
 
 export default TransitionElement;
