@@ -9,7 +9,7 @@ interface IIconListItemProps {
 
 const IconListItem: React.FunctionComponent<IIconListItemProps> = ({ icon, children, className }) => {
     return (
-        <li className={`flex flex-row items-center${className}`}>
+        <li className={`flex flex-row items-center ${className}`}>
             {icon}
             {children}
         </li>
