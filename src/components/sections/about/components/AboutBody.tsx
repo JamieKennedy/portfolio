@@ -16,9 +16,9 @@ const AboutBody: React.FunctionComponent<IAboutBodyProps> = (props) => {
         <div className="ml-16">
             <p className="w-4/5 font-robotoMono dark:text-white">
                 Hi! My name is <span className="text-sky-500 dark:text-amber-200">Jamie</span> and I am a {getAge()} year old, full stack software developer
-                based in the north west of England. With 2 years of commercial experience under my belt, I specialize in creating dynamic and responsive web
-                applications using the latest technologies, as well as maintaining legacy applications. I'm passionate about creating user-friendly and engaging
-                digital experiences that make a real impact.
+                based in the north west of England. With 2 years of commercial experience, and a first class degress in Computer Science from the University of
+                Liverpool under my belt, I specialize in creating dynamic and responsive web applications using the latest technologies, as well as maintaining
+                legacy applications. I'm passionate about creating user-friendly and engaging digital experiences that make a real impact.
             </p>
             <TechStack />
         </div>

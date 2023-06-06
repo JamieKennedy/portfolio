@@ -1,27 +1,43 @@
 import * as React from 'react';
 
+import { Link, animateScroll, scroller } from 'react-scroll';
+
 import { ReactNode } from 'react';
-import { Link } from 'react-scroll';
 
 interface IScrollLinkProps {
-    to: string;
+    to: string | number;
     offset?: number;
     children: ReactNode;
 }
 
 const ScrollLink = ({ to, offset, children }: IScrollLinkProps) => {
+    const scrollHandler = () => {
+        if (typeof to === 'string') {
+            // anchor
+            scroller.scrollTo(to, {
+                duration: 500,
+                offset: offset,
+                smooth: 'easeInOutQuart',
+            });
+            return;
+        }
+
+        // to is a number
+        animateScroll.scrollTo(to, {
+            duration: 500,
+            offset: offset,
+            smooth: 'easeInOutQuart',
+        });
+    };
+
     return (
         <div>
-            <Link
+            <a
                 className="transition-[transform, opacity] mx-8  cursor-pointer font-robotoMono duration-200 hover:text-sky-500 hover:dark:text-amber-200"
-                to={to}
-                smooth={true}
-                duration={200}
-                spy={true}
-                offset={offset}
+                onClick={() => scrollHandler()}
             >
                 {children}
-            </Link>
+            </a>
         </div>
     );
 };

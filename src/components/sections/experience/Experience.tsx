@@ -6,7 +6,7 @@ import WorkList from './components/WorkList';
 
 const Experience = () => {
     return (
-        <TransitionElement className={'mb-96 w-full self-end'} classBase="faderight" duration={500} delay={800}>
+        <TransitionElement className={'mb-10 w-full self-end'} classBase="faderight" duration={500} delay={800}>
             <div id="Experience" className="mt-16 flex h-fit flex-row items-center justify-end overflow-hidden rounded-xl">
                 <hr className="w-72 text-sky-200" />
                 <h1 className="my-16 ml-8 mr-16 text-end font-rubik text-5xl dark:text-gray-200">Experience</h1>

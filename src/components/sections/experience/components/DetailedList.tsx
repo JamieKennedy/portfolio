@@ -41,8 +41,8 @@ const DetailedList: React.FunctionComponent<IDetailedListProps> = ({ data, class
         return <></>;
     }
     return (
-        <div className={`flex w-full flex-row justify-start ${className}`}>
-            <div className="relative w-1/5  ">
+        <div className={`flex w-full flex-row justify-start ${className ?? ''}`}>
+            <div className=" relative w-2/6 ">
                 <div
                     className="pointer-events-none absolute h-10 w-full border-r-8 bg-white/5 transition-transform duration-200 ease-in-out"
                     style={{ transform: `translateY(${index * 100}%)` }}
@@ -50,7 +50,7 @@ const DetailedList: React.FunctionComponent<IDetailedListProps> = ({ data, class
                 {labels}
             </div>
 
-            <div className="flex w-4/5 flex-grow flex-col space-y-2 px-4 font-robotoMono dark:text-white">
+            <div className="flex min-h-max w-4/5 flex-grow flex-col space-y-2 px-4 font-robotoMono dark:text-white">
                 <h3 className=" text-lg ">{data[index].title}</h3>
                 <p className="text-sm ">{data[index].subTitle}</p>
                 <p className="text-sm italic text-sky-500 dark:text-amber-200">

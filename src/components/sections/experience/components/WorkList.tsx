@@ -57,9 +57,9 @@ const testData: IListItem[] = [
 
 const WorkList: React.FunctionComponent = () => {
     return (
-        <div className="flex h-fit w-1/2 flex-col">
+        <div className="flex h-fit flex-col sm:mt-40 sm:w-full sm:pl-5 md:mt-0 md:w-1/2 lg:pl-0 ">
             <h2 className="mb-8 text-3xl dark:text-white">Work</h2>
-            <DetailedList data={testData} className="h-36" />
+            <DetailedList data={testData} />
         </div>
     );
 };

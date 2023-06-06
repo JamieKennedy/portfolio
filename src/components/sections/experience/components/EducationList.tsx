@@ -19,7 +19,7 @@ const testData: IListItem[] = [
         dateTo: new Date(2020, 6),
         subTitle: 'BSc. Computer Science (1st Class)',
         content: (
-            <div className="text-sm">
+            <div className="h-fit text-sm">
                 <h4 className="mb-2 underline">Notable Modules</h4>
                 <ul>
                     <IconListItem icon={arrowIcon} className="mb-2">
@@ -51,7 +51,7 @@ const testData: IListItem[] = [
         dateTo: new Date(2017, 6),
         subTitle: 'A-Levels',
         content: (
-            <div className="text-sm">
+            <div className="h-fit text-sm">
                 <ul>
                     <IconListItem icon={arrowIcon} className="mb-2">
                         A* - Computer Science
@@ -70,9 +70,9 @@ const testData: IListItem[] = [
 
 const EducationList: React.FunctionComponent = () => {
     return (
-        <div className="flex h-fit w-1/2 flex-col">
+        <div className="flex h-fit flex-col sm:w-full sm:pl-5 md:w-1/2 lg:pl-0">
             <h2 className="mb-8 text-3xl dark:text-white">Education</h2>
-            <DetailedList data={testData} className="h-36" />
+            <DetailedList data={testData} />
         </div>
     );
 };

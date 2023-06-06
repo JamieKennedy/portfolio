@@ -7,22 +7,28 @@ import TransitionGroup from '../../ui/TransitionGroup';
 
 interface linkData {
     title: string;
-    to: string;
+    to: string | number;
+    offset?: number;
 }
 
 const links: linkData[] = [
     {
         title: 'About',
-        to: 'About',
+        to: 0,
     },
     {
         title: 'Experience',
         to: 'Experience',
+        offset: -96,
     },
-    // {
-    //     title: 'Projects',
-    //     to: 'Projects',
-    // },
+    {
+        title: 'Projects',
+        to: 'Projects',
+    },
+    {
+        title: 'Contact',
+        to: 'Contact',
+    },
 ];
 const HeaderLinks = () => {
     const [isMounted, setIsMounted] = useState(false);
@@ -43,7 +49,7 @@ const HeaderLinks = () => {
         linkElements = links.map<any>((link, i) => {
             return (
                 <TransitionElement key={i} classBase={'fadedown'} duration={500} delay={i * 200}>
-                    <ScrollLink to={link.to} offset={-96}>
+                    <ScrollLink to={link.to} offset={link.offset}>
                         {link.title}
                     </ScrollLink>
                 </TransitionElement>
